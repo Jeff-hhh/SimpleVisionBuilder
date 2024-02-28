@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D75C8877-5A62-4233-B324-5D5FA1075CE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SimpleVisionBuilder</RootNamespace>
+    <AssemblyName>SimpleVisionBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\VisionRunExe\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MKLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cognex.VisionPro, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64" />
+    <Reference Include="Cognex.VisionPro.CalibFix, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64" />
+    <Reference Include="Cognex.VisionPro.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64" />
+    <Reference Include="Cognex.VisionPro.Core, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64" />
+    <Reference Include="Cognex.VisionPro.CorePlus, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64" />
+    <Reference Include="Cognex.VisionPro.Database, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro.Display.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro.FGGigE, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro.ImageFile, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro.ImageProcessing, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro.Inspection, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro.Inspection.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro.ToolGroup, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64" />
+    <Reference Include="Cognex.VisionPro.ToolGroup.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64" />
+    <Reference Include="Cognex.VisionPro3D, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro3D.Core, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro3D.Display.Controls, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Cognex.VisionPro3D.Graphic, Version=59.2.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505" />
+    <Reference Include="Module_Camera">
+      <HintPath>..\Module_Camera\bin\Debug\Module_Camera.dll</HintPath>
+    </Reference>
+    <Reference Include="Module_LogTool">
+      <HintPath>..\Module_LogTool\bin\Debug\Module_LogTool.dll</HintPath>
+    </Reference>
+    <Reference Include="Module_MKTools">
+      <HintPath>..\Module_MKTools\bin\Debug\Module_MKTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Module_PLCCommFast">
+      <HintPath>..\Module_PLCCommFast\bin\Debug\Module_PLCCommFast.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QWhale.Common, Version=1.62.4104.36375, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
+    <Reference Include="QWhale.Editor, Version=1.62.4104.36377, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
+    <Reference Include="QWhale.Syntax, Version=1.62.4104.36376, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
+    <Reference Include="QWhale.Syntax.Parsers, Version=1.62.4104.36376, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bin\Class\Project\AutoRun.cs" />
+    <Compile Include="bin\Class\Project\GlobalParams.cs" />
+    <Compile Include="bin\Class\Project\InitialProject.cs" />
+    <Compile Include="bin\Class\Framework\FrameworkControls.cs" />
+    <Compile Include="bin\Class\Framework\LogTool.cs" />
+    <Compile Include="bin\Class\Project\IO.cs" />
+    <Compile Include="bin\Class\Vision\VproProcess.cs" />
+    <Compile Include="bin\Forms\FrameworkUI\FormChangePWD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormChangePWD.Designer.cs">
+      <DependentUpon>FormChangePWD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormDisplay.Designer.cs">
+      <DependentUpon>FormDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FormVisionUI\Cognex\kCogRecordDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FormVisionUI\Cognex\kCogRecordDisplay.Designer.cs">
+      <DependentUpon>kCogRecordDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FormVisionUI\Cognex\FormCogTaskSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FormVisionUI\Cognex\FormCogTaskSet.Designer.cs">
+      <DependentUpon>FormCogTaskSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FormVisionUI\Cognex\FormCogVision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FormVisionUI\Cognex\FormCogVision.Designer.cs">
+      <DependentUpon>FormCogVision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormText.Designer.cs">
+      <DependentUpon>FormText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FormVisionUI\Cognex\FormAutoCalib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FormVisionUI\Cognex\FormAutoCalib.Designer.cs">
+      <DependentUpon>FormAutoCalib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormMsg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormMsg.Designer.cs">
+      <DependentUpon>FormMsg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Program.cs" />
+    <Compile Include="bin\Forms\FrameworkUI\FormRecipeSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormRecipeSet.Designer.cs">
+      <DependentUpon>FormRecipeSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FormVisionUI\Cognex\FormCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FormVisionUI\Cognex\FormCamera.Designer.cs">
+      <DependentUpon>FormCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormSystem.Designer.cs">
+      <DependentUpon>FormSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormComm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormComm.Designer.cs">
+      <DependentUpon>FormComm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\FormDebug.Designer.cs">
+      <DependentUpon>FormDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="bin\Forms\FrameworkUI\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Forms\FrameworkUI\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\FormChangePWD.resx">
+      <DependentUpon>FormChangePWD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\FormDebug.resx">
+      <DependentUpon>FormDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\FormDisplay.resx">
+      <DependentUpon>FormDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\FormMsg.resx">
+      <DependentUpon>FormMsg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FormVisionUI\Cognex\kCogRecordDisplay.resx">
+      <DependentUpon>kCogRecordDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FormVisionUI\Cognex\FormCogTaskSet.resx">
+      <DependentUpon>FormCogTaskSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FormVisionUI\Cognex\FormCogVision.resx">
+      <DependentUpon>FormCogVision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\FormText.resx">
+      <DependentUpon>FormText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FormVisionUI\Cognex\FormAutoCalib.resx">
+      <DependentUpon>FormAutoCalib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\FormRecipeSet.resx">
+      <DependentUpon>FormRecipeSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FormVisionUI\Cognex\FormCamera.resx">
+      <DependentUpon>FormCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\FormSystem.resx">
+      <DependentUpon>FormSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Forms\FrameworkUI\FormComm.resx">
+      <DependentUpon>FormComm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resource\Closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resource\Maximized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resource\Minimized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resource\Collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Resource\Show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MKLogo.ico" />
+    <None Include="Resources\Question.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\Tips.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Module_FormUI\Module_FormUI.csproj">
+      <Project>{EBD1A5FB-0987-4E37-AA02-06EE2CA90F0C}</Project>
+      <Name>Module_FormUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

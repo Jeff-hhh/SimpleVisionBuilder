@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VPROTask xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DataLimits>
+    <LimitX>3</LimitX>
+    <LimitY>3</LimitY>
+    <LimitA>15</LimitA>
+  </DataLimits>
+  <ShowCogRecord>LastRun</ShowCogRecord>
+  <CogRecordIndex>0</CogRecordIndex>
+  <CamIP>1.1.1.11</CamIP>
+  <CommInstanceName>ModbusTCP_BSHLoad</CommInstanceName>
+  <LightChannel>1</LightChannel>
+  <IsDigitalLightControl>true</IsDigitalLightControl>
+  <LightValue>255</LightValue>
+  <LightControllerName>RS232MX_BSHLoad</LightControllerName>
+  <TaskName>Up_Carrier2</TaskName>
+  <ExpRun>10</ExpRun>
+  <ExpCalib>8</ExpCalib>
+  <ExpNPCalib>6</ExpNPCalib>
+  <ExpROCalib>8</ExpROCalib>
+  <CalibVppIndex>2</CalibVppIndex>
+  <Compt>
+    <X>0.4</X>
+    <Y>0</Y>
+    <A>0</A>
+  </Compt>
+  <StandardValue>
+    <X>1309.364961</X>
+    <Y>946.030426</Y>
+    <A>1.747561</A>
+  </StandardValue>
+  <IsSaveOriImage>true</IsSaveOriImage>
+  <IsSaveToolImage>true</IsSaveToolImage>
+  <IsSaveData>true</IsSaveData>
+  <RoXY>
+    <X>0</X>
+    <Y>0</Y>
+  </RoXY>
+</VPROTask>
